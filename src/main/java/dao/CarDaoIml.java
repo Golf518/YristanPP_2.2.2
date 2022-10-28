@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Repository
 public class CarDaoIml implements CarDao {
     private List<Car> cars = new ArrayList<>();
@@ -18,6 +20,11 @@ public class CarDaoIml implements CarDao {
 
     @Override
     public List<Car> returnQtyOfCar(Integer count) {
+        return addCarList().stream().limit(count < 0 ? 0 : count).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Car> addCarList() {
         return null;
     }
 }

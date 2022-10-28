@@ -6,4 +6,10 @@ import java.util.List;
 
 public interface CarDao {
     List<Car> returnQtyOfCar(Integer count);
+
+    List<Car> addCarList();
+
+
+
 }
+
