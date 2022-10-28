@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cars</title>
+    <title>Cars List</title>
+    <style>
+        body {
+            font-size: 170%;
+
+        }
+    </style>
 </head>
 <body>
-<h1>Cars</h1>
-<table class="table table-dark" border="5">
+<h1>Cars list</h1>
+<table class="table-header">
+    <thead>
     <tr>
         <th scope="col">Model</th>
-        <th scope="col">Price</th>
-        <th scope="col">Date Of Issue</th>
+        <th scope="col">Series</th>
+        <th scope="col">Color</th>
     </tr>
-    <tr th:each="car: ${cars}">
-        <td th:text="${car.model}"/>
-        <td th:text="${car.price}"/>
-        <td th:text="${car.dateOfIssue}"/>
+    </thead>
+    <tbody>
+    <tr th:each = "cars : ${cars}">
+        <td th:text="${cars.model}">
+        <td th:text="${cars.series}">
+        <td th:text="${cars.color}">
     </tr>
+    </tbody>
 </table>
 </body>
 </html>
