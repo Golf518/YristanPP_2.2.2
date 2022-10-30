@@ -3,31 +3,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cars List</title>
-    <style>
-        body {
-            font-size: 170%;
-
-        }
-    </style>
+    <title>All cars</title>
 </head>
 <body>
-<h1>Cars list</h1>
-<table class="table-header">
-    <thead>
-    <tr>
-        <th scope="col">Model</th>
-        <th scope="col">Series</th>
-        <th scope="col">Color</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each = "car :${cars}">
-        <td th:text="${cars.getModel()}"/>
-        <td th:text="${cars.getSeries()}"/>
-        <td th:text="${cars.getColor()}"/>
-    </tr>
-    </tbody>
-</table>
+<h1>Cars List</h1>
+<br/>
+<div>
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Series</th>
+            <th>Color</th>
+        </tr>
+        <tr th:each ="car : ${cars}">
+            <td th:utext="${car.getModel()}"></td>
+            <td th:utext="${car.getSeries()}"></td>
+            <td th:utext="${car.getColor()}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
